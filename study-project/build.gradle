@@ -3,23 +3,10 @@
 
 plugins {
    
-    //id 'java' // 자바 애플리케이션 빌드 관련 작업들을 추가한다. (이걸해줘야 자바 컴파일을 명령할 수 있음)
-    id 'application' // =자바플러그인+애플리케이션 관련 작업
+    id 'java' // 자바 애플리케이션 빌드 관련 작업들을 추가한다. (이걸해줘야 자바 컴파일을 명령할 수 있음)
+   // id 'application' // =자바플러그인+애플리케이션 관련 작업
     id 'eclipse' // 이클립스 IDE 관련 작업
-    // eclipseProject : .project 파일 생성
-    // clipseClasspath : .classpath 파일 생성
-    // cleanEclipseJdt : jdt 관련 파일 생성(.settings/ 폴더 및 파일 생성)
-    // eclipse : = eclipseProject + eclipsseCalsspath
-    // cleanEclipsProject : .project 파일 제거
-    // clenEclipseClasspath : .class 파일 제거
-    // clenEclipseJdt : .settings 파일 제거
-}
-// eclipse 프로젝트 이름을 설정하기
-
-eclipse {
-    project {
-        name = "study-project"
-    }
+   
 }
 
 //프로젝트에서 외부의 라이브러리를 사용한다면
@@ -40,10 +27,10 @@ dependencies {
 }
 
 //application 플러그인에서 run 수행할 때 사용할 클래스 이름을 지정한다.
-application {
+/*application {
    
     mainClass = 'com.eomcs.pms.App'
 }
 
-
+*/
 /// 빌드도구는 개발자의 편의를 위해 개발된 듯? (명령 프롬프트에 자바 경로 일일이 써줘야 하는 피로를 덜어줌)
