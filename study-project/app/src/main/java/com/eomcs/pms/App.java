@@ -1,14 +1,44 @@
 package com.eomcs.pms;
 
+import java.util.Scanner;
+
 public class App {
   public static void main(String[] args) {
-    System.out.println("[회원]"); // literal 문자열
-    System.out.println("번호: 101");
-    System.out.println("이름: 홍길동");
-    System.out.println("이메일 : hong@test.com");
-    System.out.println("암호: 1111");
-    System.out.println("사진: hong.jpg");
-    System.out.println("전화: 010-1111-2222");
-    System.out.println("가입일: 2021-07-05");
+
+    System.out.println("[회원]");
+    Scanner keyboardScan = new Scanner(System.in);
+
+    System.out.print("번호? ");
+    String no = keyboardScan.nextLine();
+
+    System.out.print("이름? ");
+    String name = keyboardScan.nextLine();
+
+    System.out.print("이메일? ");
+    String email = keyboardScan.nextLine();
+
+    System.out.print("암호? ");
+    String password = keyboardScan.nextLine();
+
+    System.out.print("사진? ");
+    String photo = keyboardScan.nextLine();
+
+    System.out.print("전화? ");
+    String tel = keyboardScan.nextLine();
+
+    java.sql.Date now = new java.sql.Date(System.currentTimeMillis());
+
+    keyboardScan.close();
+
+    System.out.println("-------------------------------");
+
+    System.out.println(no);
+    System.out.println(name);
+    System.out.println(email);
+    System.out.println(password);
+    System.out.println(photo);
+    System.out.println(tel);
+    System.out.println(now);
+
   }
 }

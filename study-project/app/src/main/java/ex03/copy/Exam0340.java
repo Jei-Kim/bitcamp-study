@@ -8,27 +8,27 @@ package ex03.copy;
 //
 public class Exam0340 {
   public static void main(String[] args) {
-    
+
     //## 4byte(float) 부동소수점의 유효자릿수
     //소수점을 뺀 후 7자리 숫자까지는 거의 정상적으로 저장된다.
     System.out.println(999.9999f);
     System.out.println(999999.9f);
     System.out.println(9.999999f);
     System.out.println("----------------------------");
-    
+
     //유효자릿수가 7자리를 넘어가는 경우 값이 잘려서 저장될 수 있다.
     System.out.println(987654321.1234567f);
     System.out.println(9.876543211234567f);
     System.out.println(987654321123456.7f);
     System.out.println("----------------------------");
-    
+
     //## 8byte(double) 부동소수점의 유효자릿수
     //소수점을 뺀 후 16자리 숫자까지는 거의 정상적으로 저장된다.
     System.out.println(987654321.1234567);
     System.out.println(9.876543211234567);
     System.out.println(987654321123456.7);
     System.out.println("----------------------------");
-    
+
     //유효자릿수가 16자리를 넘어가는 경우 값이 잘려서 저장될 수 있다.
     System.out.println(987654321.12345678);
     System.out.println(9.8765432112345678);
@@ -150,7 +150,7 @@ public class Exam0340 {
 //0.508 * 2 = 1.016 --> 1
 //0.016 * 2 = 0.032 --> 0
 //0.032 * 2 = 0.064 --> 0
-//0.064 * 2 = 0.128 --> 0
+//0.064 * 2hees3734  = 0.128 --> 0
 //0.128 * 2 = 0.256 --> 0
 //0.256 * 2 = 0.512 --> 0
 //0.512 * 2 = 1.024 --> 1
