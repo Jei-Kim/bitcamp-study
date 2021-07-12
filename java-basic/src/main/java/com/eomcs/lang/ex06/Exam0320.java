@@ -8,7 +8,7 @@ public class Exam0320 {
     int sum = 0;
 
     // 1부터 100까지의 합은?
-    while (count < 100) {
+    while (count < 100) { // 100번 반복하기(0~99) !!<=나 => 쓰지 않게 주의!!
       //count++;
       //sum += count;
       sum += ++count;

@@ -14,12 +14,12 @@ import java.util.Scanner;
 //7)/member add 명령 처리
 //8)/member list 명령 처리
 
-public class App {
+public class App1 {
 
   public static void main(String[] args) {
     Scanner keyboardScan = new Scanner(System.in); 
     ///scanner는 main 밑에 위치시키는 듯?
-    
+
     //최대 입력 개수
     final int LENGTH = 100; //회원이 100명이다. (배열의 크기 지정)
     int[] no = new int[LENGTH];
@@ -34,7 +34,7 @@ public class App {
     while (true) { 
       System.out.print("명령> "); //2
       String input = keyboardScan.nextLine();
-      
+
       if (input.equals("exit") || input.equals("quit")) {
         System.out.println("안녕!");
         break;
@@ -67,11 +67,11 @@ public class App {
         System.out.println("[회원목록]");
         for(int i =0; i < size; i++) {
           System.out.printf("%d, %s, %s, %s, %s\n",
-          no[i], name[i], email[i], tel[i], registeredDate[i]);
+              no[i], name[i], email[i], tel[i], registeredDate[i]);
         }
       } else {
 
-      System.out.println("실행할 수 없는 명령입니다."); 
+        System.out.println("실행할 수 없는 명령입니다."); 
       }
       System.out.println(); 
     } 
