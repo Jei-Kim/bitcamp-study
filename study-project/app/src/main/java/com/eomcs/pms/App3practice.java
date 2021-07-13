@@ -3,18 +3,13 @@ package com.eomcs.pms;
 import java.sql.Date;
 import java.util.Scanner;
 
-public class App3 {
+public class App3practice {
 
   public static void main(String[] args) {
-<<<<<<< HEAD
     System.out.println("[작업]");
 
     Scanner keyboardScan = new Scanner(System.in);
 
-    // 최대 100개의 작업 정보를 저장할 메모리 준비
-    // => 배열의 크기를 미리 변수에 저장하여 사용한다.
-    // => 코드 중간에 배열의 크기가 바뀌지 않도록 변수의 값 변경을 제한한다.
-    // => 한 번 설정된 값은 바꿀 수 없음을 표시하기 위해 변수명을 대문자로 표현한다.
     final int LENGTH = 100;
     
     int[] no = new int[LENGTH];
@@ -50,14 +45,14 @@ public class App3 {
       owner[i] = keyboardScan.nextLine();
 
       size++;
-      System.out.println(); // 빈 줄 출력
+      System.out.println(); 
 
       System.out.print("계속 입력하시겠습니까?(y/N) ");
       String str = keyboardScan.nextLine();
-      if (!str.equalsIgnoreCase("y")) {
+      if (str.equalsIgnoreCase("y")) {
         break;
       }
-      System.out.println(); // 빈 줄 출력
+      System.out.println(); 
     }
 
     keyboardScan.close();
@@ -67,29 +62,19 @@ public class App3 {
     System.out.printf("[%s]\n", project);
 
     for (int i = 0; i < size; i++) {
-      String stateLabel = null;
+      String state = null;
       switch (status[i]) {
         case 1:
-          stateLabel = "진행중";
+          state = "진행중";
           break;
         case 2:
-          stateLabel = "완료";
+          state = "완료";
           break;
         default:
-          stateLabel = "신규";
+          state = "신규";
       }
-      // 번호, 작업명, 마감일, 프로젝트, 상태, 담당자
-      System.out.printf("%d, %s, %s, %s, %s\n", // 출력 형식 지정
-          no[i], content[i], deadline[i], stateLabel, owner[i]);
+      
+      System.out.printf("%d, %s, %s, %s, %s\n", no[i], content[i], deadline[i], stateLabel, owner[i]);
     }
-=======
-    System.out.printf("[%s]\n", "작업");
-    System.out.printf("프로젝트: %s\n", "미니 프로젝트 관리 시스템 개발");
-    System.out.printf("번호: %d\n", 1);
-    System.out.printf("내용: %s\n", "요구사항 수집");
-    System.out.printf("완료일: %s\n", "2020-01-01");
-    System.out.printf("상태: %s\n", "0");
-    System.out.printf("담당자: %s\n", "홍길동");
->>>>>>> 63f39bd (.)
   }
 }
