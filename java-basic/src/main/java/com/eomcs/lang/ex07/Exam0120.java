@@ -48,4 +48,12 @@ public class Exam0120 {
       System.out.println();
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+
+
+
+
+>>>>>>> 0255c998a048835d04eedc51b1e4ac40c9d69c18

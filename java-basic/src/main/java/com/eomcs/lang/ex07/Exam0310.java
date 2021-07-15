@@ -20,6 +20,10 @@ public class Exam0310 {
     // => 그래서 "call by value"라 부른다.
     // => 비록 swap()에서 a와 b라는 이름의 변수가 있지만,
     //    이 변수는 main()에 있는 변수와 다른 변수이다.
+<<<<<<< HEAD
+=======
+    // !!! a,b 변수를 넘기는 게 아니라 a,b 변수에 들어있는 값을 넘기라는 뜻이다!!!
+>>>>>>> 0255c998a048835d04eedc51b1e4ac40c9d69c18
     swap(a, b);
     System.out.printf("main(): a=%d, b=%d\n", a, b);
   }
