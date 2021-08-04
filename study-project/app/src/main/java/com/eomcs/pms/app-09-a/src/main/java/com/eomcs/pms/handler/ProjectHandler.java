@@ -18,7 +18,13 @@ static class Node{
   int size = 0;
   Node head;
   Node tail;
+  
+  MemberHandler memberhandler;
+
+  public ProjectHandler(MemberHandler memberHandler) {
+  this.memberHandler = memberHandler;
   }
+
 
   public void add() {
     System.out.println("[프로젝트 등록]");
@@ -32,22 +38,22 @@ static class Node{
     project.endDate = Prompt.inputDate("종료일? ");
 
     project.owner = promptOwner("만든이?(취소: 빈 문자열) ");
-    
-    if (head == null) {
-      tail = head = node;
-    } else {
-      tail.next = node;
-
-      tail = node;
-    }
+    if (project.owner == null) {
       System.out.println("프로젝트 등록을 취소합니다.");
       return;
     }
 
     project.members = promptMembers("팀원?(완료: 빈 문자열) ");
 
-    size ++
-  }
+  Node node = new Node(project);
+    if (head == null){
+    tail = head = node;
+  } else {
+    tail.next = node;
+    tail = node;
+      }
+      size ++;
+    }
 
   //다른 패키지에 있는 App 클래스가 다음 메서드를 호출할 수 있도록 공개한다.
   public void list() {
@@ -58,12 +64,12 @@ static class Node{
     Node node = head;
     do {
       System.out.printf("%d, %s, %s, %s, %s, [%s]\n",
-          this.projects[i].no, 
-          this.projects[i].title, 
-          this.projects[i].startDate, 
-          this.projects[i].endDate, 
-          this.projects[i].owner,
-          this.projects[i].members);
+          node.project.no, 
+          node.project.title, 
+          node.project.startDate, 
+          node.project.endDate, 
+          node.project.owner,
+          node.project.members);
         node = node.next;
     } while(node != null);
   }
@@ -133,9 +139,9 @@ static class Node{
     System.out.println("[프로젝트 삭제]");
     int no = Prompt.inputInt("번호? ");
 
-    int index = indexOf(no);
+    Project project = findByNo(no);
 
-    if (index == -1) {
+    if (project == null) {
       System.out.println("해당 번호의 프로젝트가 없습니다.");
       return;
     }
@@ -153,19 +159,17 @@ while(node != null){
   if(node.project == project){
     if (node == head){
       head = node.next;
-    } else{
+    } else {
       prev.next = node.next;
     }
-
     node.next = null;
-
     if(node == tail){
       tail = prev;
     }
   break;
   }
-prev = node;
-node = node.next;
+  prev = node;
+  node = node.next;
 }
 
 size --;
@@ -174,12 +178,15 @@ size --;
   }
 
   private Project findByNo(int no) {
-    for (int i = 0; i < this.size; i++) {
-      if (this.projects[i].no == no) {
-        return this.projects[i];
-      }
-    }
-    return null;
+   Node node = head;
+
+   while(node != null){
+     if (node.project.no == no) {
+       return node.project;
+     }
+     node = node.next;
+   }
+   return null;
   }
 
   private String promptOwner(String label) {
