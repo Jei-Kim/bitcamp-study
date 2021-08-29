@@ -8,7 +8,10 @@ public class Board {
   private String content;
   private String writer;
   private Date registeredDate;
-  private int getNo() {
+  private int viewCount;
+  private int like;
+
+  public int getNo() {
     return no;
   }
   public void setNo(int no) {
@@ -50,6 +53,4 @@ public class Board {
   public void setLike(int like) {
     this.like = like;
   }
-  public int viewCount;
-  public int like;
 }
